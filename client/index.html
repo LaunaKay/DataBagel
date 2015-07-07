@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="english" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DataBagel</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/three.js/three.min.js"></script>
+    <script src="lib/d3/d3.min.js"></script>
+    <script type="text/javascript" src="js/modules/modules.js"></script>
+    <script type="text/javascript" src="js/factories/CustomerFactory.js"></script>
+    <script type="text/javascript" src="js/controllers/CustomerController.js"></script>
+    <script type="text/javascript" src="js/directives/directives.js"></script>
+    <script type="text/javascript" src="js/services/services.js"></script>
+    <script type="text/javascript" src="js/partialRoutes.js"></script>
+</head>
+
+<body class="containerlight">
+    <div class="container">
+        <div>
+            <div>
+                <img src="images/databagellogo.png" alt="data bagel logo">
+            </div>
+            <div style="float:right; vertical-align:bottom">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a class="nav-list" href="#">home</a>
+                    </li>
+                    <li>
+                        <a class="nav-list" href="#about">about</a>
+                    </li>
+                    <li>
+                        <a class="nav-list" href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="center_svg">
+            <svg width="1200" height="500">
+              <rect width="1200" height="450" style="fill:#737A7A;stroke-width:1;stroke:rgb(0,0,0)" />
+                <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">data bagel</text>
+                Sorry, your browser does not support inline SVG.
+            </svg>
+        </div>
+        <div id="imagemenu_div">
+            <i type="button" class="btn menu_btn fa fa-5x fa-pie-chart"></i>
+            <i type="button" class="btn menu_btn fa fa-5x fa-line-chart"></i>
+            <i type="button" class="btn menu_btn fa fa-5x fa-bar-chart"></i>
+            <i type="button" class="btn menu_btn fa fa-5x fa-area-chart"></i>
+        </div>
+        <div ng-view="">
+        </div>
+        <div class="container">
+            <div id="about_div">
+                <a name="about"></a>
+                <h1>about</h1>
+                <h4>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.</h4>
+            </div>
+            <div id="contact_div">
+                <a name="contact"></a>
+                <form action="" method="POST" role="form">
+                    <legend>contact us</legend>
+
+                    <div class="form-group">
+                        <label for="name">name:</label>
+                        <input type="text" class="form-control" name="name" placeholder="enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email:</label>
+                        <input type="text" class="form-control" name="email" placeholder="enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">message:</label>
+                        <input type="textarea" class="form-control" name="message" placeholder="enter message">
+                    </div>
+                    <i type="submit" class="btn menu_btn fa fa-2x fa-pie-chart">  submit</i>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

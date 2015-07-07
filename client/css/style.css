@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'grogy';
+    href: ('css/fonts/ss_Grogy/SSGrogy-CondensedBold.ttf');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h4 {
+    padding: 25px;
+    font-size: 24px;
+}
+
+.logo {
+    color: #D9BFA0;
+    font-family: grogy;
+    font-size: 98px;
+    font-weight:bold;
+    float: left;
+}
+
+.containerlight {
+    background-color: #E4DABF;
+}
+
+.navbar-nav {
+    float:right;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-list {
+    color: #5F1B0E;
+    vertical-align: bottom;
+}
+
+#jumbo {
+    height: 700px;
+    display: block;
+}
+
+#imagemenu_div {
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+#img_cont {
+    margin-top: 100px;
+}
+
+i {
+    color: #737A7A;
+}
+
+.menu_btn {
+    background-color: #D9BFA0;
+    margin-right: 50px;
+}
+
+.menu_btn:first-child {
+    margin-left: 200px;
+}
+
+#center_svg {
+    margin-top: 200px;
+}
+
+#about_div {
+    border-top: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+}
+
+#contact_div {
+    margin-top: 100px;
+    width: 50%;
+}

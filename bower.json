@@ -1,0 +1,28 @@
+{
+  "name": "databagel",
+  "version": "0.0.0",
+  "homepage": "https://github.com/launakay/databagel",
+  "authors": [
+    "Launa Bodde <launabodde@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "~1.4.1",
+    "angular-route": "~1.4.1",
+    "angular": "~1.4.1",
+    "ui-bootstrap": "~0.13.0",
+    "font-awesome": "~4.3.0",
+    "bootstrap": "~3.3.5",
+    "less": "~2.5.1",
+    "three.js": "~0.71.0",
+    "d3": "~3.5.6"
+  }
+}
