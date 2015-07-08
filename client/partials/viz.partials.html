@@ -1,22 +1,25 @@
 <section id="viz" class="container content-section text-center">
     <h2 style="text-align:center">DATA VISUALIZATION</h2>
-    <div class="row" ng-controller="SalesController">
+    <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
         </div>
-        <div linear-chart chart-data="salesData"></div>
+        <div id="loading"></div>
     </div>
-    <div ng-controller="DataController as DC">
-        <label style="float:right">Search:
-            <input ng-model="searchTag">
-        </label>
-        <table class="table table-hover">
-            <tr ng-repeat="language in DC.languages | orderBy: 'CreationDate' | filter:searchTag">
-                <p>{{language}}</p>
-                <td ng-bind="language.CreationDate"></td>
-                <td ng-bind="language.Reputation"></td>
-                <td ng-bind="language.Location"></td>
-                <td ng-bind="language.Tags"></td>
-            </tr>
-        </table>
+    <div id="container"></div>
+    <div id="menu"></div>
+    <div id="icons">
+      <img src="css/img/single.png">
+      <img src="css/img/pinch.png">
+      <img src="css/img/triple.png">
     </div>
+    <script>
+      d3.json("data/investments.json", function (error, data) {
+        VIZ.drawElements(data);
+        VIZ.transform('helix');
+        d3.select("#loading").remove();
+        VIZ.render();
+        VIZ.animate();
+        window.addEventListener('resize', VIZ.onWindowResize, false);
+      });
+    </script>
 </section>

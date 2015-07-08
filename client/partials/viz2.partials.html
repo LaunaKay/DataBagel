@@ -1,0 +1,22 @@
+<section id="viz2" class="container content-section text-center">
+    <h2 style="text-align:center">DATA VISUALIZATION</h2>
+    <div class="row" ng-controller="SalesController">
+        <div class="col-lg-8 col-lg-offset-2">
+        </div>
+        <div linear-chart chart-data="salesData"></div>
+    </div>
+    <div ng-controller="DataController as DC">
+        <label style="float:right">Search:
+            <input ng-model="searchTag">
+        </label>
+        <table class="table table-hover">
+            <tr ng-repeat="language in DC.languages | orderBy: 'CreationDate' | filter:searchTag">
+                <p>{{language}}</p>
+                <td ng-bind="language.CreationDate"></td>
+                <td ng-bind="language.Reputation"></td>
+                <td ng-bind="language.Location"></td>
+                <td ng-bind="language.Tags"></td>
+            </tr>
+        </table>
+    </div>
+</section>

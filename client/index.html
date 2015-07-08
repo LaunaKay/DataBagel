@@ -25,8 +25,8 @@
     <!-- Scripts -->
     <script type="text/javascript" src="lib/angular/angular.js"></script>
     <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
-    <script src="lib/three.js/three.min.js"></script>
-    <script src="lib/d3/d3.min.js"></script>
+
+
     <script type="text/javascript" src="js/modules.js"></script>
      <script type="text/javascript" src="js/controllers/DataController.js"></script>
      <script type="text/javascript" src="js/controllers/SalesController.js"></script>
@@ -34,6 +34,11 @@
     <script type="text/javascript" src="js/directives/linearChart.js"></script>
     <script src="lib/moment/moment.js"></script>
     <script src="lib/angular-moment/angular-moment.js"></script>
+    <script src="lib/three.js/three.min.js"></script>
+    <script type="text/javascript" src="lib/tween/tween.js"></script>
+    <script type="text/javascript" src="lib/CSS3DRenderer/CSS3DRenderer.js"></script>
+    <script src="lib/d3/d3.min.js"></script>
+    <script type="text/javascript" src="js/viz.js"></script>
 
 </head>
 
@@ -93,6 +98,31 @@
 
 
     <!-- Visualizations Section -->
+    <section id="viz" class="container content-section text-center">
+    <h2 style="text-align:center">DATA VISUALIZATION</h2>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+        </div>
+        <div id="loading"></div>
+    </div>
+    <div id="container"></div>
+    <div id="menu"></div>
+    <div id="icons">
+      <img src="css/img/single.png">
+      <img src="css/img/pinch.png">
+      <img src="css/img/triple.png">
+    </div>
+    <script>
+      d3.json("data/investments.json", function (error, data) {
+        VIZ.drawElements(data);
+        VIZ.transform('helix');
+        d3.select("#loading").remove();
+        VIZ.render();
+        VIZ.animate();
+        window.addEventListener('resize', VIZ.onWindowResize, false);
+      });
+    </script>
+</section>
     <div ng-view=""></div>
 
         <!-- About Section -->

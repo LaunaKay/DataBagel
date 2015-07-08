@@ -1,0 +1,35 @@
+{
+  "name": "css3drenderer",
+  "version": "0.0.0",
+  "main": "CSS3DRenderer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "three": "0.58.9"
+  },
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "readme": "ERROR: No README data found!",
+  "_id": "css3drenderer@0.0.0",
+  "dist": {
+    "shasum": "51c970b06d0af6ff319baf4c562a7b72bd5bc9df",
+    "tarball": "http://registry.npmjs.org/css3drenderer/-/css3drenderer-0.0.0.tgz"
+  },
+  "_from": "css3drenderer@*",
+  "_npmVersion": "1.2.30",
+  "_npmUser": {
+    "name": "jez0990",
+    "email": "jez0990@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "jez0990",
+      "email": "jez0990@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_shasum": "51c970b06d0af6ff319baf4c562a7b72bd5bc9df",
+  "_resolved": "https://registry.npmjs.org/css3drenderer/-/css3drenderer-0.0.0.tgz"
+}
