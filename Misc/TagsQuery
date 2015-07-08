@@ -1,0 +1,21 @@
+SELECT Posts.CreationDate, Posts.Tags, Posts.ViewCount, Users.Id, Users.Reputation, Users.Location
+FROM Posts
+LEFT JOIN Users ON Users.Id = Posts.OwnerUserId
+WHERE 
+  DATALENGTH(Posts.Title) > 0 AND
+  DATALENGTH(Users.Location) > 0 AND
+  Posts.CreationDate >= '2010-01-01T00:00:00.000' AND
+  Posts.CreationDate <='2015-07-06T00:00:00.000' AND
+  Posts.Tags IN(SELECT Posts.Tags FROM Posts WHERE
+       Posts.Tags LIKE '%webdev%' OR
+       Posts.Tags LIKE '%webdevelopment%' OR
+       Posts.Tags LIKE '%web%') AND
+        Posts.Tags IN(SELECT Posts.Tags FROM Posts WHERE 
+          Posts.Tags LIKE '%ruby%' OR
+          Posts.Tags LIKE '%php%' OR
+          Posts.Tags LIKE '%python%' OR
+          Posts.Tags LIKE '%javascript%' OR
+          Posts.Tags LIKE '%MEAN%' OR
+          Posts.Tags LIKE '%LAMP%' OR
+          Posts.Tags LIKE '%rails%')
+ORDER BY Posts.ViewCount desc

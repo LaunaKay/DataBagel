@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
+mongoose = require('mongoose');
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/databagel');
+mongoose.connect('mongodb://localhost/stackoverflow');
 
 var models_path = __dirname + '/../models';
 
