@@ -1,4 +1,4 @@
-app.controller('DataController',['DataFactory', function(DataFactory)
+app.controller('DataController',['DataFactory', function(DataFactory, $scope)
 {
     console.log('DataController Loaded');
     var that = this;
@@ -9,8 +9,22 @@ app.controller('DataController',['DataFactory', function(DataFactory)
         {
             that.languages = languages;
             console.log('ctrl.data', that.languages);
-        });
+        })
+
     }
-    console.log('executing getLanguages');
+    console.log('exuecting getlanguages');
     getLanguages();
+
+    // var getDojos = function()
+    // {
+    //     DataFactory.getDojos(function(dojos)
+    //     {
+    //             that.dojos = dojos;
+    //             console.log('ctrl.dojos', that.dojos);
+    //     });
+    // }
+
+    // console.log('executing getDojos');
+    // getDojos();
+
 }]);

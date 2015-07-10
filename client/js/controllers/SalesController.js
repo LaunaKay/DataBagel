@@ -23,3 +23,4 @@ app.controller('SalesController', ['$scope', '$interval', function($scope, $inte
         $scope.salesData.push({hour: hour, sales:sales});
     }, 1000, 10);
 }]);
+
