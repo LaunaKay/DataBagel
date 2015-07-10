@@ -1,3 +1,4 @@
+
 app.factory('DataFactory', ['$http', '$location', function($http, $location)
 {
     return{
@@ -8,6 +9,15 @@ app.factory('DataFactory', ['$http', '$location', function($http, $location)
             {
                 callback(response);
             })
+        },
+        getDojos: function(callback)
+        {
+            console.log('DataFactory getDojos');
+            $http.get('/dojo').success(function(response)
+            {
+                callback(response);
+            })
         }
     }
-}])
+}]);
+

@@ -8,4 +8,10 @@ module.exports = function (app)
         console.log('routes.get languages');
         languages.index(request,response);
     })
+
+    .get('/dojo', function(request, response)
+    {
+    	console.log('routes.get dojo');
+    	languages.dojo(request,response);
+    })
 };

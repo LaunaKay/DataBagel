@@ -1,25 +1,17 @@
-<section id="viz" class="container content-section text-center">
-    <h2 style="text-align:center">DATA VISUALIZATION</h2>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
+<section class="container content-section text-center">
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <h2>Stack Overflow Stats</h2>
+        <ul ng-repeat = "dojo in data.dojos.items">
+            <li style="color:white">{{dojo.full_name}}</li>
+            <li>{{dojo.score}}</li>
+        </ul>
+        <div ng-controller="LineCtrl" id="line-chart" >
+            <canvas id="line" class="chart chart-line" data="data"
+              labels="labels" legend="true" series="series"
+              click="onClick">
+            </canvas>
         </div>
-        <div id="loading"></div>
     </div>
-    <div id="container"></div>
-    <div id="menu"></div>
-    <div id="icons">
-      <img src="css/img/single.png">
-      <img src="css/img/pinch.png">
-      <img src="css/img/triple.png">
-    </div>
-    <script>
-      d3.json("data/investments.json", function (error, data) {
-        VIZ.drawElements(data);
-        VIZ.transform('helix');
-        d3.select("#loading").remove();
-        VIZ.render();
-        VIZ.animate();
-        window.addEventListener('resize', VIZ.onWindowResize, false);
-      });
-    </script>
+</div>
 </section>

@@ -9,7 +9,7 @@ body {
     height: 100%;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
-    background-color: #000;
+    background-color: #595f6f;
 }
 
 html {
@@ -147,8 +147,8 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../images/intro-bg.jpg) no-repeat bottom center scroll;
-    background-color: #000;
+    background: url(../images/HiRes.jpg) no-repeat bottom center scroll;
+    background-color: #595f6f;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -305,17 +305,17 @@ a:focus {
 }
 
 .btn-default {
-    border: 1px solid #42dca3;
-    color: #42dca3;
+    border: 1px solid #adb7c3;
+    color: #adb7c3;
     background-color: transparent;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #42dca3;
+    border: 1px solid #adb7c3;
     outline: 0;
     color: #000;
-    background-color: #42dca3;
+    background-color: #adb7c3;
 }
 
 ul.banner-social-buttons {
@@ -374,4 +374,20 @@ body {
 
 input {
     color:black;
+}
+
+.key {
+    fill: rgb(255,255,255);
+    stroke: rgb(255,255,255);
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: light;
+    font-size: 8px;
+}
+
+.label {
+    fill:rgb(255,255,255);
+    stroke: rgb(255,255,255);
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: light;
+    font-size:8px;
 }
