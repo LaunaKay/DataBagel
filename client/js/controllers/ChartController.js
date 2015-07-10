@@ -6,11 +6,11 @@ app.controller('MenuCtrl', function ($scope)
 
   app.controller('LineCtrl', ['$scope', '$timeout', function ($scope)
   {
-    $scope.labels = ['2010', '2011', '2012', '2013', '2014', '2015'];
-    $scope.series = ['Python', 'Javascript'];
+    $scope.labels = ['JS', 'Python', 'Ruby', 'PHP'];
+    $scope.series = ['2010-13', '2013-15'];
     $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40],
-      [28, 48, 40, 19, 86, 27, 90]
+      [4000, 1000, 1300, 3000],
+      [4766, 2920, 1054, 2201]
     ];
     $scope.onClick = function (points, evt) {
       console.log(points, evt);
@@ -33,27 +33,37 @@ app.controller('MenuCtrl', function ($scope)
     // }, 3000);
   }]);
 
-  app.controller('BarCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
-    $scope.options = { scaleShowVerticalLines: false };
-    $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-    $scope.series = ['Series A', 'Series B'];
-    $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40],
-      [28, 48, 40, 19, 86, 27, 90]
-    ];
-    $timeout(function () {
-      $scope.options = { scaleShowVerticalLines: true };
-    }, 3000);
+  app.controller('BarCtrl', ['$scope', '$timeout', function ($scope)
+  {
+      $scope.getData = function () {
+      // initialize the model
+      $scope.ruby = 50;
+      $scope.php = 50;
+      $scope.js = 50;
+      $scope.python = 50;
+      console.log($scope.ruby);
+
+      $scope.options = { scaleShowVerticalLines: false };
+      $scope.labels = ['Python', 'PHP', 'Javascript', 'Ruby'];
+      $scope.series = ['2014', '2015'];
+      $scope.data = [
+        [$scope.ruby, $scope.php, $scope.js, $scope.python],
+        [28, 48, 40, 19]
+      ];
+    }();
   }]);
 
-  app.controller('DoughnutCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
-    $scope.labels = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-    $scope.data = [0, 0, 0];
-
-    $timeout(function () {
-      $scope.data = [350, 450, 100];
-    }, 500);
+  app.controller('DoughnutCtrl', ['$scope', '$timeout', function ($scope)
+  {
+    $scope.labels = ['Comment on JSON File', 'Best CRLF?', 'Valid JS char for var'];
+    $scope.data = [292, 134, 128];
   }]);
+
+app.controller('MainCtrl', function($scope, myService) {
+  myService.getFooOldSchool(function(data) {
+     $scope.foo = data;
+  });
+});
 
   app.controller('PieCtrl', function ($scope) {
     $scope.labels = ['Download Sales', 'In-Store Sales', 'Mail Sales'];

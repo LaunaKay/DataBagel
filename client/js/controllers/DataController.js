@@ -9,7 +9,8 @@ app.controller('DataController',['DataFactory', function(DataFactory, $scope)
         {
             that.languages = languages;
             console.log('ctrl.data', that.languages);
-        });
+        })
+
     }
     console.log('exuecting getlanguages');
     getLanguages();

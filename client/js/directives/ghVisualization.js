@@ -2,9 +2,9 @@ app.directive('ghVisualization', function () {
 
   // constants
   var margin = 20,
-    width = 960,
-    height = 500 - .5 - margin,
-    color = d3.rgb(152,245,255);
+    width = 700,
+    height = 400 - .5 - margin,
+    color = d3.interpolateRgb('#FFFFFF', '#D4DAE9');
 
   return {
     restrict: 'E',
@@ -57,7 +57,10 @@ app.directive('ghVisualization', function () {
         var layers = vis.selectAll("g.layer")
             .data(data)
           .enter().append("g")
-            .style("fill", color)
+            .style("fill", function(d,i)
+              {
+                return color(i/(n-1));
+              })
             .attr("class", "layer");
 
         // Bars
@@ -125,7 +128,10 @@ app.directive('ghVisualization', function () {
             .attr("class", "swatch")
             .attr("width", 20)
             .attr("height", 20)
-            .style("fill", color)
+            .style("fill", function(d,i)
+              {
+                return color(i/(n-1));
+              })
             .attr("y", function (d, i) {
               return height + 36 + 30*(i%3);
             })

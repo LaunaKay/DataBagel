@@ -8,8 +8,9 @@ module.exports = (function()
     return{
         index: function(request, response)
         {
-            console.log('inside index')
-            var ruby = Language.find({Tags:/ruby/}).exec(function(err, languages)
+            console.log('inside index');
+
+            Language.find({ViewCount: {$gt:50000}}).sort({ViewCount:-1}).limit(100).exec(function(err, languages)
             {
                 if(err)
                 {

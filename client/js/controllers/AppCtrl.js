@@ -1,8 +1,8 @@
 app.controller('AppCtrl', function ($scope, $http) {
 
   // initialize the model
-  $scope.user = 'launakay';
-  $scope.repo = 'PacMan';
+  $scope.user = 'ipython';
+  $scope.repo = 'ipython';
 
   // helper for formatting date
   var humanReadableDate = function (d) {

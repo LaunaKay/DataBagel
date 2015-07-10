@@ -1,22 +1,35 @@
 <section id="viz2" class="container content-section text-center">
-    <h2 style="text-align:center">DATA VISUALIZATION</h2>
-    <div class="row" ng-controller="SalesController">
-        <div class="col-lg-8 col-lg-offset-2">
+    <div class="container" style="width:75%;">
+        <h2 style="text-align:center">Stack Overflow</h2>
+        <div id="bar-chart" ng-controller="BarCtrl">
+            <form ng-submit="BarCtrl.getData()" class="form-horizontal">
+
+                    <label for="ruby">Ruby</label>
+                    <input ng-model="ruby" ng-init="ruby=50" type="number" class="input-small" id="ruby" placeholder="ruby">
+                    <label for="python">Python</label>
+                    <input ng-model="python" ng-init="python=50"type="number" class="input-small" id="python" placeholder="python">
+                    <label for="php">PHP</label>
+                    <input ng-model="php" ng-init="php=50" type="number" class="input-small" id="php" placeholder="PHP">
+                    <label for="js">JS</label>
+                    <input ng-model="js" ng-init="js=50"type="number" class="input-small" id="js" placeholder="JS">
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+              <canvas id="bar" class="chart chart-bar" data="data" labels="labels" series="series"
+                      options="options"></canvas>
         </div>
-        <div linear-chart chart-data="salesData"></div>
     </div>
-    <div ng-controller="DataController as DC">
-        <label style="float:right">Search:
-            <input ng-model="searchTag">
-        </label>
-        <table class="table table-hover">
-            <tr ng-repeat="language in DC.languages | orderBy: 'CreationDate' | filter:searchTag">
-                <p>{{language}}</p>
-                <td ng-bind="language.CreationDate"></td>
-                <td ng-bind="language.Reputation"></td>
-                <td ng-bind="language.Location"></td>
-                <td ng-bind="language.Tags"></td>
-            </tr>
-        </table>
-    </div>
+        <div ng-Controller = "DataController as DC">
+              <label style="float:right">Search:
+                <input ng-model="searchTag">
+            </label>
+            <table class="table table-hover">
+                <tr ng-repeat="language in DC.languages | orderBy: 'CreationDate' | filter:searchTag">
+                    <td ng-bind="language.CreationDate"></td>
+                    <td ng-bind="language.ViewCount"></td>
+                    <td ng-bind="language.Location"></td>
+                    <td ng-bind="language.Tags"></td>
+                </tr>
+            </table>
+        </div>
 </section>

@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var favicon = require('serve-favicon');
 
 var server = app.listen(8888, function()
 {
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 
 app.use(express.static(path.join(__dirname, './client')));
+app.use(favicon(__dirname + '/client/images/favicon.ico'));
 
 // Mongoose
 require('./server/config/mongoose.js');
